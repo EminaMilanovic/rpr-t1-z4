@@ -41,7 +41,8 @@ public class Predmet {
     void ispisi(Student s)   {
 
         for(int i=0;i<broj;i++){
-            if(studenti[i].equals(s)) {
+            if(studenti[i].getBr_indexa()==s.getBr_indexa()) {
+                
                 for(int j=i;j<broj-1;j++){
                     studenti[j]=studenti[j+1];
                 }
@@ -55,7 +56,7 @@ public class Predmet {
         String s="";
         for(int i=0;i<broj;i++){
 
-         s+= i+". "+studenti[i].getPrezime()+" "+studenti[i].getIme()+" ("+studenti[i].getBr_indexa()+")\n";
+         s+= i+1+". "+studenti[i].getPrezime()+" "+studenti[i].getIme()+" ("+studenti[i].getBr_indexa()+")\n";
         }
         return s;
     }

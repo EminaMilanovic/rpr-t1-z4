@@ -5,12 +5,19 @@ import java.util.Objects;
 public class Student {
     private String ime;
     private String prezime;
+    private int br_indexa;
 
+    public Student(String i,String p,int br)
+    {
+        ime=i;
+        prezime=p;
+        br_indexa=br;
+    }
     public int getBr_indexa() {
         return br_indexa;
     }
 
-    private int br_indexa;
+
 
     public String getIme() {
         return ime;
