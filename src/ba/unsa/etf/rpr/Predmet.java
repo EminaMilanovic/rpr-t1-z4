@@ -32,23 +32,25 @@ public class Predmet {
         this.sifra_predmeta = sifra_predmeta;
     }
 
-    void upisi(Student s){
+    void upisi(Student s) throws IllegalAccessException {
         if(broj+1<=max_broj_studenata) {
             studenti[broj]=s;
             broj++;
-        }
+        } else throw new IllegalAccessException("nema mjesta na predmetu");
     }
-    void ispisi(Student s)   {
-
+    void ispisi(Student s) throws IllegalAccessException {
+        boolean k=false;
         for(int i=0;i<broj;i++){
             if(studenti[i].getBr_indexa()==s.getBr_indexa()) {
-                
+                k=true;
+
                 for(int j=i;j<broj-1;j++){
                     studenti[j]=studenti[j+1];
                 }
                 broj--;
             }
         }
+        if(!k) throw new IllegalAccessException("brisanje nepostojeceg studenta");
     }
 
     @Override

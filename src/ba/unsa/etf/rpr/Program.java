@@ -3,7 +3,7 @@ import  java.util.Scanner;
 
 public class Program {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         // kreiranje novog predmeta, novog studenta, upis studenta na predmet, ispis studenta sa predmeta,
         // brisanje studenta, brisanje predmeta, te ispis spiska studenata na predmetu.
 
@@ -13,6 +13,7 @@ public class Program {
         System.out.printf("Unesite max broj studenata na predmetu: ");
         int max = ulaz.nextInt();
         System.out.printf("Unesite sifru predmeta: ");
+        String pom = ulaz.nextLine();
         String sifra = ulaz.nextLine();
         Predmet p = new Predmet(naziv, sifra, max);
         int n;
