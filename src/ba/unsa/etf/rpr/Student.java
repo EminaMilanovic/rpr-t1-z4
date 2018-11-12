@@ -1,20 +1,20 @@
 package ba.unsa.etf.rpr;
 
-import java.util.Objects;
+
 
 public class Student {
     private String ime;
     private String prezime;
-    private int br_indexa;
+    private int brIndexa;
 
     public Student(String i,String p,int br)
     {
         ime=i;
         prezime=p;
-        br_indexa=br;
+        brIndexa =br;
     }
-    public int getBr_indexa() {
-        return br_indexa;
+    public int getBrIndexa() {
+        return brIndexa;
     }
 
 
@@ -23,28 +23,28 @@ public class Student {
         return ime;
     }
 
-    public void setIme(String ime) {
-        this.ime = ime;
+    public void setIme(String ime2) {
+        this.ime = ime2;
     }
 
     public String getPrezime() {
         return prezime;
     }
 
-    public void setPrezime(String prezime) {
-        this.prezime = prezime;
+    public void setPrezime(String prezime2) {
+        this.prezime = prezime2;
     }
 
     @Override
     public boolean equals(Object o) {
         Student p = (Student) o;
-        if (p.ime == this.ime && p.prezime == this.prezime) return true;
+        if (p.ime.equals(this.ime) && p.prezime.equals(this.prezime)) return true;
         return false;
     }
 
     @Override
     public String toString() {
-        return getPrezime()+" "+getIme()+" ("+getBr_indexa()+")";
+        return getPrezime()+" "+getIme()+" ("+ getBrIndexa()+")";
     }
 }
 

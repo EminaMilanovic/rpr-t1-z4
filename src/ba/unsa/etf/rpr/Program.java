@@ -13,17 +13,17 @@ public class Program {
         System.out.printf("Unesite max broj studenata na predmetu: ");
         int max = ulaz.nextInt();
         System.out.printf("Unesite sifru predmeta: ");
-        String pom = ulaz.nextLine();
+
         String sifra = ulaz.nextLine();
         Predmet p = new Predmet(naziv, sifra, max);
         int n;
-        String prazan_red;
+        String prazanRed;
         do {
             System.out.printf("Unesite 0-upis studenata,1-brisanje studenta,2-ispis studenata na predmetu,-1-za kraj programa: \n");
              n = ulaz.nextInt();
             switch (n) {
                 case 0: {
-                     prazan_red=ulaz.nextLine();
+                     prazanRed=ulaz.nextLine();
                     System.out.printf("Unesite ime studenta: ");
                     String ime = ulaz.nextLine();
                     System.out.printf("Unesite prezime studenta: ");
@@ -36,7 +36,7 @@ public class Program {
 
                 }
                 case 1: {
-                    prazan_red=ulaz.nextLine();
+                    prazanRed=ulaz.nextLine();
                     System.out.printf("Unesite ime studenta: ");
                     String ime = ulaz.nextLine();
                     System.out.printf("Unesite prezime studenta: ");

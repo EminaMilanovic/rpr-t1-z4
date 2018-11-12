@@ -1,47 +1,51 @@
 package ba.unsa.etf.rpr;
 
-import java.util.Arrays;
+
 
 public class Predmet {
-    private  String naziv_predmeta;
-    private String sifra_predmeta;
-    private int  max_broj_studenata;
+    private  String nazivPredmeta;
+    private String sifraPredmeta;
+    private int maxBrojStudenata;
     private int broj=0;
     private Student [] studenti;
+
+    public String getSifraPredmeta() {
+        return sifraPredmeta;
+    }
+
+    public void setSifraPredmeta(String sifraPredmeta) {
+        this.sifraPredmeta = sifraPredmeta;
+    }
+
+
     public Predmet(String naziv,String sifra,int br){
-        setNaziv_predmeta(naziv);
-        setSifra_predmeta(sifra);
-        max_broj_studenata=br;
-        studenti=new Student[max_broj_studenata];
+        setNazivPredmeta(naziv);
+        setSifraPredmeta(sifra);
+        maxBrojStudenata =br;
+        studenti=new Student[maxBrojStudenata];
 
     }
-    public String getNaziv_predmeta() {
-        return naziv_predmeta;
+    public String getNazivPredmeta() {
+        return nazivPredmeta;
     }
 
 
-    public void setNaziv_predmeta(String naziv_predmeta) {
-        this.naziv_predmeta = naziv_predmeta;
+    public void setNazivPredmeta(String nazivPredmeta2) {
+        this.nazivPredmeta = nazivPredmeta2;
     }
 
-    public String getSifra_predmeta() {
-        return sifra_predmeta;
-    }
 
-    public void setSifra_predmeta(String sifra_predmeta) {
-        this.sifra_predmeta = sifra_predmeta;
-    }
 
     void upisi(Student s) throws IllegalAccessException {
-        if(broj+1<=max_broj_studenata) {
+        if(broj+1<= maxBrojStudenata) {
             studenti[broj]=s;
             broj++;
-        } else throw new IllegalAccessException("nema mjesta na predmetu");
+        } else { throw new IllegalAccessException("nema mjesta na predmetu"); }
     }
     void ispisi(Student s) throws IllegalAccessException {
         boolean k=false;
         for(int i=0;i<broj;i++){
-            if(studenti[i].getBr_indexa()==s.getBr_indexa()) {
+            if(studenti[i].getBrIndexa()==s.getBrIndexa()) {
                 k=true;
 
                 for(int j=i;j<broj-1;j++){
@@ -58,7 +62,7 @@ public class Predmet {
         String s="";
         for(int i=0;i<broj;i++){
 
-         s+= i+1+". "+studenti[i].getPrezime()+" "+studenti[i].getIme()+" ("+studenti[i].getBr_indexa()+")\n";
+         s+= i+1+". "+studenti[i].getPrezime()+" "+studenti[i].getIme()+" ("+studenti[i].getBrIndexa()+")\n";
         }
         return s;
     }
